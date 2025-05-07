@@ -146,6 +146,7 @@ footer .footer-links a {
 footer p {
   margin-top: 1rem;
 }
+
 .bg-custom {
   background-color: #00264d !important; /* Azul marino */
 }
@@ -172,4 +173,91 @@ footer p {
 .btn-outline-light:hover {
   background-color: #ffffff;
   color: #00264d;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar ul {
+    display: block;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .navbar .logo {
+    width: 80px;
+  }
+
+  /* Hero Section */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Especialidades Section */
+  .especialidades-list {
+    grid-template-columns: 1fr; /* Cambiar a una columna */
+  }
+
+  /* Testimonios Section */
+  .testimonio {
+    margin-bottom: 1rem;
+  }
+
+  /* Footer */
+  footer .footer-links {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar .logo {
+    width: 70px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Especialidades Section */
+  .especialidades h2 {
+    font-size: 1.5rem;
+  }
+
+  .especialidades-list {
+    grid-template-columns: 1fr; /* Una columna en dispositivos pequeños */
+  }
+
+  /* Testimonios Section */
+  .testimonios h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  footer .footer-links {
+    font-size: 0.9rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
 }
