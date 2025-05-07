@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-top: 60px;
+    }
+    .stat-card {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar reutilizable -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="img/logo.png" alt="Logo" width="90" class="me-2">
+      Policonsultorio
+    </a>
+
+    <!-- Botón hamburguesa para mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="consulta_especialista.html">Consulta con Especialista</a></li>
+        <li class="nav-item"><a class="nav-link" href="consultar_turno.html">Consultar Turno</a></li>
+        <li class="nav-item"><a class="nav-link" href="administracion.html">Administración</a></li>
+        <li class="nav-item"><a class="nav-link" href="administrador.html">Gestión de Turnos</a></li>
+        <li class="nav-item">
+          <a class="btn btn-outline-light ms-lg-3" href="login.html">Iniciar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br><hr><br><hr>
+  <main class="container">
+    <h2 class="my-4">📊 Panel de Administración</h2>
+
+    <!-- Estadísticas Rápidas -->
+    <div class="row g-4 mb-4">
+      <div class="col-md-3">
+        <div class="stat-card text-center">
+          <h5>Consultas</h5>
+          <h3>🩺 105</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card text-center">
+          <h5>Pacientes</h5>
+          <h3>👤 89</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card text-center">
+          <h5>Ingresos Totales</h5>
+          <h3>💰 $1.150.000</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-card text-center">
+          <h5>Turnos Hoy</h5>
+          <h3>📅 17</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="stat-card">
+          <h5 class="text-center">Consultas por Médico</h5>
+          <canvas id="graficoConsultas"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="stat-card">
+          <h5 class="text-center">Distribución de Ingresos</h5>
+          <canvas id="graficoIngresos"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de Reportes -->
+    <div class="mt-5">
+      <div class="stat-card">
+        <h5 class="mb-3">🧾 Detalle de Médicos</h5>
+        <div class="table-responsive">
+          <table id="tablaMedicos" class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>Médico</th>
+                <th>Consultas</th>
+                <th>Ingresos</th>
+                <th>% Médico</th>
+                <th>% Clínica</th>
+                <th>Ganancia Médico</th>
+                <th>Ganancia Clínica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dr. López</td>
+                <td>25</td>
+                <td>250000</td>
+                <td>70%</td>
+                <td>30%</td>
+                <td>175000</td>
+                <td>75000</td>
+              </tr>
+              <tr>
+                <td>Dra. Gómez</td>
+                <td>40</td>
+                <td>400000</td>
+                <td>70%</td>
+                <td>30%</td>
+                <td>280000</td>
+                <td>120000</td>
+              </tr>
+              <tr>
+                <td>Dr. Ramírez</td>
+                <td>40</td>
+                <td>500000</td>
+                <td>60%</td>
+                <td>40%</td>
+                <td>300000</td>
+                <td>200000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Inicializar DataTable
+    $(document).ready(function () {
+      $('#tablaMedicos').DataTable();
+    });
+
+    // Gráfico de Barras - Consultas
+    const ctx1 = document.getElementById('graficoConsultas').getContext('2d');
+    const graficoConsultas = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Dr. López', 'Dra. Gómez', 'Dr. Ramírez'],
+        datasets: [{
+          label: 'Consultas',
+          data: [25, 40, 40],
+          backgroundColor: ['#0d6efd', '#198754', '#fd7e14']
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Gráfico de Torta - Ingresos
+    const ctx2 = document.getElementById('graficoIngresos').getContext('2d');
+    const graficoIngresos = new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Dr. López', 'Dra. Gómez', 'Dr. Ramírez'],
+        datasets: [{
+          label: 'Ingresos',
+          data: [250000, 400000, 500000],
+          backgroundColor: ['#0d6efd', '#198754', '#dc3545']
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #00aaff;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  width: 120px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar .btn-login {
+  background-color: #ff6600;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #003366;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn-cta {
+  background-color: #00aaff;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+/* Especialidades Section */
+.especialidades {
+  padding: 2rem;
+  background-color: #e0f7fa;
+}
+
+.especialidades h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.especialidades-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.especialidad {
+  background-color: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.especialidad h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Testimonios Section */
+.testimonios {
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.testimonios h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonio {
+  background-color: #f0f8ff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.testimonio p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #003366;
+  color: white;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+footer .footer-links {
+  margin-bottom: 1rem;
+}
+
+footer .footer-links a {
+  color: white;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+footer p {
+  margin-top: 1rem;
+}
+.bg-custom {
+  background-color: #00264d !important; /* Azul marino */
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white !important;
+}
+
+.btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #00264d;
+}

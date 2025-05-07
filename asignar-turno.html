@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Asignar Turno</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+ <!-- Navbar reutilizable -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="Logo" width="90" class="me-2">
+        Policonsultorio
+      </a>
+  
+      <!-- Botón hamburguesa para mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="consulta_especialista.html">Consulta con Especialista</a></li>
+          <li class="nav-item"><a class="nav-link" href="consultar_turno.html">Consultar Turno</a></li>
+          <li class="nav-item"><a class="nav-link" href="administracion.html">Administración</a></li>
+          <li class="nav-item"><a class="nav-link" href="administrador.html">Gestión de Turnos</a></li>
+          <li class="nav-item">
+            <a class="btn btn-outline-light ms-lg-3" href="login.html">Iniciar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br><hr><br><hr>
+  <div class="container mt-5">
+    <h2 class="mb-4">Asignar Nuevo Turno</h2>
+
+    <form id="formTurno">
+      <div class="mb-3">
+        <label for="paciente" class="form-label">Paciente</label>
+        <input type="text" class="form-control" id="paciente" placeholder="Nombre del paciente" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="dni" class="form-label">DNI</label>
+        <input type="text" class="form-control" id="dni" placeholder="DNI del paciente" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="especialidad" class="form-label">Especialidad</label>
+        <select id="especialidad" class="form-select" required>
+          <option selected disabled>Seleccione una especialidad</option>
+          <option value="Cardiología">Cardiología</option>
+          <option value="Pediatría">Pediatría</option>
+          <option value="Dermatología">Dermatología</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="medico" class="form-label">Médico</label>
+        <select id="medico" class="form-select" required>
+          <option selected disabled>Seleccione un médico</option>
+          <option value="Dra. Gómez">Dra. Gómez</option>
+          <option value="Dr. López">Dr. López</option>
+          <option value="Dra. Martínez">Dra. Martínez</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" class="form-control" id="fecha" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="hora" class="form-label">Hora</label>
+          <input type="time" class="form-control" id="hora" required>
+        </div>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Asignar Turno</button>
+      </div>
+    </form>
+
+    <div id="resultadoTurno" class="alert alert-info mt-4 d-none"></div>
+  </div>
+
+  <script>
+    document.getElementById('formTurno').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const paciente = document.getElementById('paciente').value;
+      const medico = document.getElementById('medico').value;
+      const especialidad = document.getElementById('especialidad').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      const resultado = `
+        Turno asignado exitosamente:<br>
+        <strong>Paciente:</strong> ${paciente}<br>
+        <strong>Médico:</strong> ${medico}<br>
+        <strong>Especialidad:</strong> ${especialidad}<br>
+        <strong>Fecha:</strong> ${fecha} a las ${hora}
+      `;
+
+      const resultadoDiv = document.getElementById('resultadoTurno');
+      resultadoDiv.classList.remove('d-none');
+      resultadoDiv.innerHTML = resultado;
+
+      this.reset();
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
